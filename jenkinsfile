@@ -3,8 +3,8 @@ agent any
 stages {
 stage ('Performance Tests') {
   steps {
-    deleteDir()
-    checkout scm
+    //deleteDir()
+    //checkout scm
     bat 'npm install'
     bat 'npm run lighthouse:ci'
   }
