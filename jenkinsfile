@@ -6,7 +6,7 @@ stage ('Performance Tests') {
     deleteDir()
     checkout scm
     //sh 'npm install'
-    bat 'npm run lighthouse'
+    bat 'npm run lighthouse:ci'
   }
   post {
     always {
