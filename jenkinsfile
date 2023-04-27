@@ -1,7 +1,7 @@
 pipeline{
 agent any
-stages('Performance Tests') {
-stage{
+stages {
+stage ('Performance Tests') {
   steps {
     deleteDir()
     checkout scm
