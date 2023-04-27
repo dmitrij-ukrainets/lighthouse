@@ -1,12 +1,10 @@
-stage('Performance Tests') {
-  agent {
-    label 'master'
-  }
+pipeline{
+stages('Performance Tests') {
   steps {
     deleteDir()
     checkout scm
     //sh 'npm install'
-    sh 'npm run lighthouse'
+    bat 'npm run lighthouse'
   }
   post {
     always {
@@ -20,4 +18,5 @@ stage('Performance Tests') {
       ])
     }
   }
+}
 }
