@@ -18,7 +18,7 @@ stage ('Performance Tests') {
         alwaysLinkToLastBuild: false,
         keepAll: true,
         reportDir: '.',
-        reportFiles: 'lighthouse-report.html',
+        reportFiles: 'Lighthouse_win_local\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.html',
         reportName: "Lighthouse"
       ])
     }
