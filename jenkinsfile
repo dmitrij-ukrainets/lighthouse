@@ -14,7 +14,6 @@ stage ('Performance Tests') {
   bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.json /E $WORKSPACE\\$BUILD_NUMBER\\"
   archiveArtifacts artifacts: "$BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.html, $BUILD_NUMBER\\htmlreport\\Lighthouse.Dmitrij.Ukrainets.report.json"
   }
-  }
   post {
     always {
       publishHTML (target: [
@@ -27,5 +26,6 @@ stage ('Performance Tests') {
       ])
     }
   }
+}
 }
 }
