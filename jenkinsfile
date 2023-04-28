@@ -6,7 +6,7 @@ stage ('Performance Tests') {
     bat 'npm install'
     bat 'npm run lighthouse:ci'
   }
-  stage stage('publish results'){
+  stage ('publish results'){
   bat "mkdir $WORKSPACE\\$BUILD_NUMBER\""
   bat bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.html /E $WORKSPACE\\$BUILD_NUMBER\\"
   bat bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.json /E $WORKSPACE\\$BUILD_NUMBER\\"
