@@ -1,16 +1,11 @@
 {
-  "name": "puppeteer-cloud-function",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "gcp-build": "node node_modules/puppeteer/install.js"
-  },
   "devDependencies": {
-    "lighthouse": "^9.6.8",
-    "@google-cloud/functions-framework": "^3.1.2"
+    "lighthouse": "^9.6.8"
   },  
   "dependencies": {
-    "puppeteer": "^19.11.1"
+    "puppeteer": "^18"
+  },
+  "scripts": {
+    "lighthouse:ci": "lighthouse/PerfTest_Lighthouse_Dmitrij_Ukrainets.js"
   }
 }
