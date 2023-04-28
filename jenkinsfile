@@ -12,7 +12,7 @@ stage ('Performance Tests') {
   bat "mkdir $WORKSPACE\\$BUILD_NUMBER\\"
   bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.html /E $WORKSPACE\\$BUILD_NUMBER\\"
   bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.json /E $WORKSPACE\\$BUILD_NUMBER\\"
-  archiveArtifacts artifacts: "$BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.html, $BUILD_NUMBER\\htmlreport\\Lighthouse.Dmitrij.Ukrainets.report.json"
+  archiveArtifacts artifacts: "$BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.html, $BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.json"
   }
   post {
     always {
