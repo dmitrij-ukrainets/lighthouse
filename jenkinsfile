@@ -5,6 +5,7 @@ stage ('Performance Tests') {
   steps {
     //deleteDir()
     //checkout scm
+    bat 'mkdir .cache\\puppeteer'
     bat 'npm install'
     bat 'npm run lighthouse:ci'
   }
