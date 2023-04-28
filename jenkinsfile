@@ -6,6 +6,7 @@ stage ('Performance Tests') {
     bat 'npm install'
     bat 'npm run lighthouse:ci'
   }
+  }
   stage ('publish results'){
   steps{
   bat "mkdir $WORKSPACE\\$BUILD_NUMBER\\"
