@@ -20,7 +20,7 @@ stage ('Performance Tests') {
         allowMissing: false,
         alwaysLinkToLastBuild: false,
         keepAll: true,
-        reportDir: '$BUILD_NUMBER\\archive\\$BUILD_NUMBER\\',
+        reportDir: 'builds\\$BUILD_NUMBER\\archive\\$BUILD_NUMBER\\',
         reportFiles: 'Lighthouse.Dmitrij.Ukrainets.report.html',
         reportName: "Lighthouse"
       ])
