@@ -7,6 +7,7 @@ stage ('Performance Tests') {
     //checkout scm
     bat 'mkdir .cache\\puppeteer'
     bat 'npm install'
+    npm' install puppeteer'
     bat 'npm run lighthouse:ci'
   }
   post {
