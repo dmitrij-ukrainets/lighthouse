@@ -6,7 +6,7 @@ stage ('Performance Tests') {
     //deleteDir()
     //checkout scm
     bat 'mkdir .cache\\puppeteer'
-    bat 'npm clean-install'
+    bat 'npm install'
     //bat 'npm install puppeteer'
     bat 'npm run lighthouse:ci'
     bat "rmdir /S /Q .cache"
