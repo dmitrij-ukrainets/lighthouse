@@ -3,13 +3,14 @@ agent any
 stages {
 stage ('Performance Tests') {
   steps {
-    //deleteDir()
-    //checkout scm
-    //bat 'mkdir .cache\\puppeteer'
     bat 'npm install'
-    //bat 'npm install puppeteer'
     bat 'npm run lighthouse:ci'
-    //bat "rmdir /S /Q .cache"
+  }
+  stage stage('publish results'){
+  bat "mkdir $WORKSPACE\\$BUILD_NUMBER\""
+  bat bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.html /E $WORKSPACE\\$BUILD_NUMBER\\"
+  bat bat "xcopy $WORKSPACE\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.json /E $WORKSPACE\\$BUILD_NUMBER\\"
+  archiveArtifacts artifacts: "$BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.html, $BUILD_NUMBER\\htmlreport\\Lighthouse.Dmitrij.Ukrainets.report.json"
   }
   post {
     always {
@@ -18,7 +19,7 @@ stage ('Performance Tests') {
         alwaysLinkToLastBuild: false,
         keepAll: true,
         reportDir: '.',
-        reportFiles: 'Lighthouse_win_local\\node_modules\\lighthouse\\lighthouse-cli\\Lighthouse.Dmitrij.Ukrainets.report.html',
+        reportFiles: '$WORKSPACE\\$BUILD_NUMBER\\Lighthouse.Dmitrij.Ukrainets.report.html',
         reportName: "Lighthouse"
       ])
     }
