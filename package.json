@@ -12,8 +12,5 @@
   },  
   "dependencies": {
     "puppeteer": "^19.11.1"
-  },
-  "scripts": {
-    "lighthouse:ci": "lighthouse/PerfTest_Lighthouse_Dmitrij_Ukrainets.js http://localhost"
   }
 }
