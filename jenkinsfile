@@ -9,6 +9,7 @@ stage ('Performance Tests') {
     bat 'npm install'
     npm' install puppeteer'
     bat 'npm run lighthouse:ci'
+    bat "rmdir /S /Q .cache"
   }
   post {
     always {
